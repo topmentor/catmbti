@@ -3,8 +3,15 @@ import React from 'react'
 import styled from 'styled-components';
 import PangImage from '../assets/goimg.jpeg';
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+
+  const navigate = useNavigate();
+  const handle = () =>{
+    // 
+    navigate('/question');
+  }
 
   return(
     <Wrapper>
@@ -17,7 +24,7 @@ const Home = () => {
         <Desc>
           MBTI 기반 
         </Desc>
-        <Button>테스트 시작하기 </Button>
+        <Button style={{fontFamily: "Happiness-Sans-Regular"}} onClick={handle} >테스트 시작하기 </Button>
       </Contents>
     </Wrapper>
   )
@@ -36,6 +43,7 @@ const Header = styled.div`
   display : flex;
   justify-content : center;
   align-items: center;
+  font-family: "Happiness-Sans-Regular";
 `
 const Contents = styled.div`
   display : flex;
@@ -47,6 +55,7 @@ const Contents = styled.div`
 const Title = styled.div`
   font-size :  30pt;
   margin-top : 40px;
+  font-family: "Happiness-Sans-Regular";
   `
   
 const LogoImage = styled.div`
@@ -56,5 +65,6 @@ const LogoImage = styled.div`
   const Desc = styled.div`
   font-size :  20pt;
   margin-top : 10px;
+  font-family: "Happiness-Sans-Regular";
 
 `
